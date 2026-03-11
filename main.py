@@ -1,8 +1,12 @@
 from ping3 import ping, verbose_ping
 
-for x in range(1, 255):
-    res = ping(f"192.168.10.{x}")
-    if res:
-        print(f"Host 192.168.10.{x} => ACTIVE")
-    else:
-        print(f"Host 192.168.10.{x} => is dead ...")
+
+def ping_network(part_ip):
+    for x in range(1, 255):
+        res = ping(f"{part_ip}.{x}")
+        if res:
+            print(f"Host {part_ip}.{x} => ACTIVE")
+        else:
+            print(f"Host {part_ip}.{x} => is dead ...")
+
+ping_network("192.168.24")
