@@ -1,28 +1,19 @@
 import socket
-# import ldap
-from dns import resolver,reversename
 from ping3 import ping, verbose_ping
-
-# # hostname = socket.gethostbyaddr("192.168.24.94")
-# # print(hostname)
-
-# socket.gethostname()
-# res = socket.getfqdn("192.168.24.90")
-# print(res)
-
-# print(socket.gethostbyaddr("192.168.24.90"))
-hostname = socket.gethostbyaddr('192.168.24.90')
-print(hostname)
+from termcolor import colored
 
 
-'''
-def ping_network(part_ip):
+network = input("Введите IP подсети: ")
+
+def ping_network(ip):
+    sub_network = ip[:-2]   
+
     for x in range(1, 255):
-        res = ping(f"{part_ip}.{x}")
+        res = ping(f"{sub_network}.{x}")
         if res:
-            print(f"Host {part_ip}.{x} => ACTIVE")
+            print(colored(f"[+]Host {sub_network}.{x} => ACTIVE", 'green'))
         else:
-            print(f"Host {part_ip}.{x} => is dead ...")
+            print(colored(f"[-]Host {sub_network}.{x} => is dead ...", 'red'))
 
-ping_network("192.168.24")
-'''
+
+ping_network(network)
