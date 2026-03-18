@@ -2,7 +2,7 @@ import socket
 from ping3 import ping, verbose_ping
 from termcolor import colored
 
-
+print("Маска по умолчанию /24")
 network = input("Введите IP подсети: ")
 
 def ping_network(ip):
