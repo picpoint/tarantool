@@ -4,6 +4,7 @@
 /vendor
 __pycache__
 .venv
+venv
 .idea
 npm-debug.log
 yarn-error.log
