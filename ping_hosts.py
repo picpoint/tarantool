@@ -1,7 +1,7 @@
 from ping3 import ping, verbose_ping
 from termcolor import colored
 
-def ping_network(ip):
+def ping_network_func(ip):
     sub_network = ip[:-2]   
 
     for x in range(1, 255):
