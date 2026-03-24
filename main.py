@@ -1,5 +1,6 @@
 from ping_hosts import ping_network_func
 from socket_client import client_connect_func
+from socket_server import server_connect_func
 
 '''
 Модуль сканирования сети
@@ -9,5 +10,9 @@ from socket_client import client_connect_func
 # ping_network(network)
 
 
-res = client_connect_func(('www.python.org', 80))
-print(res)
+res_client = client_connect_func(("192.168.24.51", 22))
+print(res_client)
+
+res_server = server_connect_func()
+print(res_server)
+
